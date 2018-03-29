@@ -1,0 +1,9 @@
+input.ng-invalid{
+    border: 1px solid red;
+}
+.weather-form, .result{
+    margin: 20px;
+}
+.result-form{
+    margin-top: 30px;
+}

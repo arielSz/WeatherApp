@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Weather app!
+  </h1>
+</div>
+<div class="container">
+  <form name="localisationForm" #localisationForm="ngForm" class="card" novalidate="true" (ngSubmit)="checkWeather()">
+    <div class="card-header text-center">Check weather</div>
+    <div class="weather-form">
+      <div class="form-group">
+        <label>Country:</label>
+        <input name="country" class="form-control" [(ngModel)]="country" required/>
+      </div>
+      <div class="form-group">
+        <label>City:</label>
+        <input name="city" class="form-control" [(ngModel)]="city" required/>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" name="check" [disabled]="localisationForm.invalid">Sprawdź</button>
+      </div>
+    </div>
+  </form>
+  <div class="card result-form" *ngIf="weather !== undefined">
+      <div class="card-header text-center">Result</div>
+      <div class="result">
+          Humidity: <label name = "humidity">{{weather.Humidity}}</label>
+          <br/>
+          Temperature: <label name = "temperature">{{weather.Temperature.Value}} {{weather.Temperature.Format}}</label>
+          <br/> 
+          Location:  <label name = "location">{{weather.Location.City}}</label> {{weather.Location.Country}}
+      </div>
+
+  </div>
+</div>
